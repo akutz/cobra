@@ -45,6 +45,15 @@ var EnablePrefixMatching = false
 //To disable sorting, set it to false.
 var EnableCommandSorting = true
 
+// HelpFlagShorthand is the character used to for the help flag's shorthand notation. The
+// default value is "h".
+var HelpFlagShorthand string = "h"
+
+// HelpFlagUsageFormatString is the format string used with fmt.Sprintf to produce the
+// usage value for the help flag. The name of a given command is substituted in the
+// formatted result.
+var HelpFlagUsageFormatString string = "help for %s"
+
 //AddTemplateFunc adds a template function that's available to Usage and Help
 //template generation.
 func AddTemplateFunc(name string, tmplFunc interface{}) {

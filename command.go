@@ -698,7 +698,8 @@ func (c *Command) ExecuteC() (cmd *Command, err error) {
 
 func (c *Command) initHelpFlag() {
 	if c.Flags().Lookup("help") == nil {
-		c.Flags().BoolP("help", "h", false, "help for "+c.Name())
+		c.Flags().BoolP("help", HelpFlagShorthand, false,
+			fmt.Sprintf(HelpFlagUsageFormatString, c.Name()))
 	}
 }
 
